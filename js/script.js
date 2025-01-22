@@ -63,7 +63,7 @@ let buttonsArray = document.querySelectorAll("button")
 buttonsArray.forEach(function (elem){
     elem.addEventListener("click", function(){
         if(elem.id=="input"){
-            let userInput = prompt("What size grid do you want? MAX 100")
+            userInput = prompt("What size grid do you want? MAX 100")
     
             clearGrid();
             if(userInput >100){
