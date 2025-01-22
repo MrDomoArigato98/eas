@@ -55,6 +55,8 @@ const createGrid = (userInput = 16) => {
             if(Number(currentOpacity<1)){
                 if(opacityBool){
                     elem.style.opacity = currentOpacity = Number(currentOpacity) + 0.1
+                }else{
+                    elem.style.opacity = 1.0;
                 }
             }
         });  
