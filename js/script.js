@@ -37,7 +37,7 @@ const createGrid = (xAxisUserInput,yAxisUserInput) => {
 }
 createGrid(xAxisUserInput,yAxisUserInput);
 
-//Get all elements with class box
+//Create an Event Listener for mouseover which adds black background
 let divArray = document.querySelectorAll(".box");
 console.log(divArray);
 divArray.forEach(function (elem) {
@@ -45,3 +45,9 @@ divArray.forEach(function (elem) {
         elem.classList.add("hover");
     });  
 })
+
+let button = document.querySelector('#input')
+console.log(button)
+button.addEventListener("click", function(){
+    alert("clicked")
+});
