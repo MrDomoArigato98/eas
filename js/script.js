@@ -1,13 +1,20 @@
 const grid = document.querySelector("#grid")
 const button = document.querySelector('#input')
-let userInput = 16;
+let userInput;
 
 // Random integer function so I can set random RGB Values of the background.
 const getRandom = () => {
     return Math.floor(Math.random() * (256 - 0) + 0)
 }
 
-const createGrid = (userInput) => {
+//Function to clear the grid
+const clearGrid = () =>{
+    while(grid.firstChild){
+        grid.removeChild(grid.firstChild);
+    }
+}
+
+const createGrid = (userInput = 16) => {
     for (let y = 0; y < userInput; y++) {
         //Create row
         const row = document.createElement("boxContainer") 
@@ -52,17 +59,27 @@ const createGrid = (userInput) => {
     })
 }
 
+let buttonsArray = document.querySelectorAll("button")
+buttonsArray.forEach(function (elem){
+    elem.addEventListener("click", function(){
+        if(elem.id=="input"){
+            let userInput = prompt("What size grid do you want? MAX 100")
+    
+            clearGrid();
+            if(userInput >100){
+                userInput = 100;
+            }
+            createGrid(userInput);
+        }
+        if(elem.id=="cleargrid"){
+            clearGrid();
+            createGrid(userInput);
+        }
+    });
+})
 //Event listener to button on click
 button.addEventListener("click", function(){
-    let userInput = prompt()
-    
-    while(grid.firstChild){
-        grid.removeChild(grid.firstChild);
-    }
-    if(userInput >100){
-        userInput = 100;
-    }
-    createGrid(userInput);
+
 });
 
 createGrid(userInput);
