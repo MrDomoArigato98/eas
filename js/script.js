@@ -7,21 +7,6 @@ const getRandom = () => {
     return Math.floor(Math.random() * (256 - 0) + 0)
 }
 
-// for (let y = 0; y < 16; y++) {
-//     //Create row div
-//     const row = document.createElement("div") 
-//     row.classList.add("row")
-//     grid.appendChild(row)
-    
-//     for (let x = 0; x < 16; x++) {
-//         //Create box within row div
-//         const box = document.createElement("div")
-//         box.classList.add("box");
-//         //Adds box into box container, then adds container into grid.
-//         row.appendChild(box)
-//      }
-// }
-
 const createGrid = (userInput) => {
     for (let y = 0; y < userInput; y++) {
         //Create row
@@ -31,10 +16,17 @@ const createGrid = (userInput) => {
         
         for (let x = 0; x < userInput; x++) {
             //Create boxes within row
+            const div = document.createElement("div")
             const box = document.createElement("div")
+            
+            div.setAttribute("style","background: ");
+            
             box.classList.add("box");
-            //Adds box into row
-            row.appendChild(box)
+            div.classList.add("border")
+            div.classList.add("box");
+
+            div.appendChild(box);
+            row.appendChild(div);
          }
     }
     //Add listener each time grid is created.
@@ -47,9 +39,8 @@ const createGrid = (userInput) => {
             b = getRandom()
             
             if(!elem.hasAttribute("style")){
-                console.log("nice")
                 elem.setAttribute("style","background: rgb("+r+","+g+","+b+")");
-                // elem.setAttribute("style","opacity:")
+                // elem.setAttribute("style","opacity:0.1");
             }
         });  
     })
@@ -67,9 +58,6 @@ button.addEventListener("click", function(){
     }
     createGrid(userInput);
 });
-
-
-
 
 createGrid(userInput);
 

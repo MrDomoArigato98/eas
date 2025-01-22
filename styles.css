@@ -6,7 +6,8 @@
     margin: auto;
     width: 1000px;
     height: 1000px;
-    border:2px solid red;
+    border:3px solid black;
+    border-radius: 5px;
 }
 
 .row{
@@ -16,7 +17,6 @@
 
 .box {
     display:flex;
-    border: 1px solid black;
     width: 100%;
   }
 
@@ -40,4 +40,7 @@ button{
 }
 button:hover{
     background-color: green;
+}
+.empty{
+    border: 1px solid black;
 }
