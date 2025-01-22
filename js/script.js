@@ -1,6 +1,10 @@
 const grid = document.querySelector("#grid")
-
 let userInput = 16;
+
+// Random integer function so I can set random RGB Values of the background.
+const getRandom = () => {
+    return Math.floor(Math.random() * (256 - 0) + 0)
+}
 
 // for (let y = 0; y < 16; y++) {
 //     //Create row div
@@ -38,10 +42,15 @@ createGrid(userInput);
 
 //Create an Event Listener for mouseover which adds black background
 let divArray = document.querySelectorAll(".box");
-console.log(divArray);
 divArray.forEach(function (elem) {
     elem.addEventListener("mouseover", function() {
-        elem.classList.add("hover");
+        let r,g,b;
+        r = getRandom()
+        g = getRandom()
+        b = getRandom()
+
+        elem.setAttribute("style","background: rgb("+r+","+g+","+b+")");
+        // elem.classList.add("hover");
     });  
 })
 
@@ -58,3 +67,5 @@ button.addEventListener("click", function(){
     }
     createGrid(userInput);
 });
+
+
