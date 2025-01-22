@@ -10,23 +10,24 @@ const getRandom = () => {
 const createGrid = (userInput) => {
     for (let y = 0; y < userInput; y++) {
         //Create row
-        const row = document.createElement("div") 
+        const row = document.createElement("boxContainer") 
         row.classList.add("row")
         grid.appendChild(row)
         
         for (let x = 0; x < userInput; x++) {
             //Create boxes within row
-            const div = document.createElement("div")
-            const box = document.createElement("div")
+            // I'm using another container because I want to keep the grid when opacity is later modified
+            const boxContainer = document.createElement("boxContainer")
+            const box = document.createElement("boxContainer")
             
-            div.setAttribute("style","background: ");
+            boxContainer.setAttribute("style","background: ");
             
             box.classList.add("box");
-            div.classList.add("border")
-            div.classList.add("box");
+            boxContainer.classList.add("border")
+            boxContainer.classList.add("boxContainer");
 
-            div.appendChild(box);
-            row.appendChild(div);
+            boxContainer.appendChild(box);
+            row.appendChild(boxContainer);
          }
     }
     //Add listener each time grid is created.
@@ -38,9 +39,14 @@ const createGrid = (userInput) => {
             g = getRandom()
             b = getRandom()
             
+            let currentOpacity = elem.style.opacity;
+
             if(!elem.hasAttribute("style")){
-                elem.setAttribute("style","background: rgb("+r+","+g+","+b+")");
-                // elem.setAttribute("style","opacity:0.1");
+                elem.style.background = " rgb("+r+","+g+","+b+")"
+                elem.style.opacity =  0.1;
+            }
+            if(Number(currentOpacity)<1){
+                elem.style.opacity = currentOpacity = Number(currentOpacity) + 0.1
             }
         });  
     })
