@@ -32,7 +32,7 @@ button{
     background-color: #3882F6;
     color: #f9faf8;
     font-size:18px;
-    min-width: 200px;
+    min-width: 250px;
     border: none;
     border-radius: 5px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -52,4 +52,4 @@ button:hover{
 .boxContainer {
     display:flex;
     width: 100%;
-  }
+}
