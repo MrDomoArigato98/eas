@@ -1,27 +1,24 @@
 #grid{
     display:flex;
-    justify-content: center;
     flex-wrap: wrap;
-    max-width: 800px;
-    height: 800px;
+    justify-content:stretch;
+    margin: auto;
+    width: 1000px;
+    height: 1000px;
+    border:2px solid red;
 }
 
-.boxContainer{
+.row{
     display: flex;
-    max-width: 800px;
-    height: 50px;
+    width:100%;
 }
+
 .box {
     display:flex;
-    flex-wrap: wrap;
-    flex-basis: 48px;
-    max-width: 48px;
-    min-width: 48px;
-    height: 48px;
     border: 1px solid black;
+    width: 100%;
   }
 
 .hover{
     background-color: black;
-    color: black;
 }
