@@ -1,7 +1,6 @@
 const grid = document.querySelector("#grid")
 
-let xAxisUserInput = 16;
-let yAxisUserInput = 16;
+let userInput = 16;
 
 // for (let y = 0; y < 16; y++) {
 //     //Create row div
@@ -18,14 +17,14 @@ let yAxisUserInput = 16;
 //      }
 // }
 
-const createGrid = (xAxisUserInput,yAxisUserInput) => {
-    for (let y = 0; y < yAxisUserInput; y++) {
+const createGrid = (userInput) => {
+    for (let y = 0; y < userInput; y++) {
         //Create row
         const row = document.createElement("div") 
         row.classList.add("row")
         grid.appendChild(row)
         
-        for (let x = 0; x < xAxisUserInput; x++) {
+        for (let x = 0; x < userInput; x++) {
             //Create boxes within row
             const box = document.createElement("div")
             box.classList.add("box");
@@ -33,9 +32,9 @@ const createGrid = (xAxisUserInput,yAxisUserInput) => {
             row.appendChild(box)
          }
     }
-
 }
-createGrid(xAxisUserInput,yAxisUserInput);
+
+createGrid(userInput);
 
 //Create an Event Listener for mouseover which adds black background
 let divArray = document.querySelectorAll(".box");
@@ -49,5 +48,13 @@ divArray.forEach(function (elem) {
 let button = document.querySelector('#input')
 console.log(button)
 button.addEventListener("click", function(){
-    alert("clicked")
+    let userInput = prompt()
+    
+    while(grid.firstChild){
+        grid.removeChild(grid.firstChild);
+    }
+    if(userInput >100){
+        userInput = 100;
+    }
+    createGrid(userInput);
 });
