@@ -1,11 +1,14 @@
 #grid{
     display:flex;
     justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    height: 800px;
 }
 
 .boxContainer{
     display: flex;
-    width: 800px;
+    max-width: 800px;
     height: 50px;
 }
 .box {
