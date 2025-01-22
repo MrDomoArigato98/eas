@@ -1,6 +1,9 @@
-
+body{
+    background-color: lightcyan;
+}
 #grid{
     display:flex;
+    background-color: white;
     flex-wrap: wrap;
     justify-content:stretch;
     margin: auto;

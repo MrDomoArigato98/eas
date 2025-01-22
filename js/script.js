@@ -68,7 +68,7 @@ buttonsArray.forEach(function (elem){
             userInput = prompt("What size grid do you want? MAX 100")
     
             clearGrid();
-            if(userInput >100){
+            if(userInput >=100){
                 userInput = 100;
             }
             createGrid(userInput);
