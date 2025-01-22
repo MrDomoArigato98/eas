@@ -1,3 +1,4 @@
+
 #grid{
     display:flex;
     flex-wrap: wrap;
@@ -21,4 +22,25 @@
 
 .hover{
     background-color: black;
+}
+.btn{
+    display: flex;
+    justify-content:center;
+}
+
+button{
+    display:flex;
+    background-color: #3882F6;
+    color: #f9faf8;
+    font-size:18px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 8px 32px;
+    border: 1px solid black;
+    margin: 20px;
+}
+button:hover{
+    background-color: green;
 }
