@@ -1,4 +1,5 @@
 const grid = document.querySelector("#grid")
+const button = document.querySelector('#input')
 let userInput = 16;
 
 // Random integer function so I can set random RGB Values of the background.
@@ -36,27 +37,25 @@ const createGrid = (userInput) => {
             row.appendChild(box)
          }
     }
+    //Add listener each time grid is created.
+    let divArray = document.querySelectorAll(".box");
     divArray.forEach(function (elem) {
         elem.addEventListener("mouseover", function() {
             let r,g,b;
             r = getRandom()
             g = getRandom()
             b = getRandom()
-    
-            elem.setAttribute("style","background: rgb("+r+","+g+","+b+")");
+            
+            if(!elem.hasAttribute("style")){
+                console.log("nice")
+                elem.setAttribute("style","background: rgb("+r+","+g+","+b+")");
+                // elem.setAttribute("style","opacity:")
+            }
         });  
     })
 }
 
-createGrid(userInput);
-
-//Create an Event Listener for mouseover which adds black background
-let divArray = document.querySelectorAll(".box");
-
-
-
-let button = document.querySelector('#input')
-console.log(button)
+//Event listener to button on click
 button.addEventListener("click", function(){
     let userInput = prompt()
     
@@ -69,4 +68,8 @@ button.addEventListener("click", function(){
     createGrid(userInput);
 });
 
+
+
+
+createGrid(userInput);
 
