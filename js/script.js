@@ -24,3 +24,12 @@ for (let y = 0; y < 16; y++) {
         grid.appendChild(boxContainer)
      }
 }
+
+//Get all elements with class box
+let divArray = document.querySelectorAll(".box");
+console.log(divArray);
+divArray.forEach(function (elem) {
+    elem.addEventListener("mouseover", function() {
+        elem.classList.add("hover");
+    });  
+})
