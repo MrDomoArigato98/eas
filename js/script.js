@@ -28,8 +28,6 @@ const createGrid = (userInput = 16) => {
             const boxContainer = document.createElement("boxContainer")
             const box = document.createElement("boxContainer")
             
-            boxContainer.setAttribute("style","background: ");
-            
             box.classList.add("box");
             boxContainer.classList.add("border")
             boxContainer.classList.add("boxContainer");
