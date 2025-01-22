@@ -1,8 +1,8 @@
 const grid = document.querySelector("#grid")
 const button = document.querySelector('#input')
 let userInput;
-let userColor;
 let opacityBool = true;
+
 // Random integer function so I can set random RGB Values of the background.
 const getRandom = () => {
     return Math.floor(Math.random() * (256 - 0) + 0)
@@ -44,12 +44,11 @@ const createGrid = (userInput = 16) => {
             r = getRandom()
             g = getRandom()
             b = getRandom()
-            
             let currentOpacity = elem.style.opacity;
 
             if(!elem.hasAttribute("style")){
                 elem.style.background = " rgb("+r+","+g+","+b+")"
-                if(opacityBool){
+                if(!opacityBool){
                     elem.style.opacity = 1.0;
                 }
             }
@@ -90,10 +89,6 @@ buttonsArray.forEach(function (elem){
         }
     });
 })
-//Event listener to button on click
-button.addEventListener("click", function(){
-
-});
 
 createGrid(userInput);
 
