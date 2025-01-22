@@ -36,23 +36,24 @@ const createGrid = (userInput) => {
             row.appendChild(box)
          }
     }
+    divArray.forEach(function (elem) {
+        elem.addEventListener("mouseover", function() {
+            let r,g,b;
+            r = getRandom()
+            g = getRandom()
+            b = getRandom()
+    
+            elem.setAttribute("style","background: rgb("+r+","+g+","+b+")");
+        });  
+    })
 }
 
 createGrid(userInput);
 
 //Create an Event Listener for mouseover which adds black background
 let divArray = document.querySelectorAll(".box");
-divArray.forEach(function (elem) {
-    elem.addEventListener("mouseover", function() {
-        let r,g,b;
-        r = getRandom()
-        g = getRandom()
-        b = getRandom()
 
-        elem.setAttribute("style","background: rgb("+r+","+g+","+b+")");
-        // elem.classList.add("hover");
-    });  
-})
+
 
 let button = document.querySelector('#input')
 console.log(button)
